@@ -1,0 +1,24 @@
+import os
+
+
+def header(x):
+    wait(2)
+    os.popen("@echo off")
+    t="echo "+x+">log.csv"
+    os.popen(t)
+
+
+def append(x,y):
+    wait(2)
+    os.popen("@echo off")
+    for i in range (0,y):
+        x=","+x
+        wait(1)
+    t="echo "+x+">>log.csv"
+    os.popen(t)
+
+
+header("Test Data,Second,funny")
+append("col1",0)
+append("col2",1)
+append("col3",2)
